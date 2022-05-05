@@ -13,3 +13,15 @@ function openMenu(){
 function closeMenu(){
     document.body.classList.remove("menuExpanded")
 }
+
+ScrollReveal({
+    origin: "top",
+    distance: "30px",
+    duration: 1000,
+}).reveal('#home, #home img');
+
+ScrollReveal({
+    origin: "bottom",
+    distance: "40px",
+    duration: 850,
+}).reveal('#home .containerNumberFather, #services, #services header, #services .card, #about, #about header, #about .content, #about img');
