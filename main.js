@@ -1,10 +1,27 @@
+window.addEventListener("scroll", onScroll)
+
+onScroll();
 function onScroll(){
+    showNavOnScroll();
+    showBackToTopButtonOnScroll();
+}
+
+function showNavOnScroll(){
     if(scrollY > 0){
         navigation.classList.add("scroll");
     }else{
         navigation.classList.remove("scroll");
     }
 }
+
+function showBackToTopButtonOnScroll(){
+    if(scrollY > 500){
+        backToTopButton.classList.add("show");
+    }else{
+        backToTopButton.classList.remove("show");
+    }
+}
+
 
 function openMenu(){
     document.body.classList.add("menuExpanded")
@@ -24,4 +41,4 @@ ScrollReveal({
     origin: "bottom",
     distance: "40px",
     duration: 850,
-}).reveal('#home .containerNumberFather, #services, #services header, #services .card, #about, #about header, #about .content, #about img');
+}).reveal('#home .containerNumberFather, #services, #services header, #services .card, #about, #about header, #about .content, #about img, #contact, #contact .button, #contact img, footer');
