@@ -8,14 +8,14 @@
 }
 
 :root{
-    
-    --primary-color: hsl(170, 100%, 26%);
-    --box-color: hsl(39, 100%, 97%);
+    --hue: 170;
+    --primary-color: hsl(var(--hue), 100%, 26%);
     --headline: hsl(210, 11%, 15%);
     --paragraph:hsl(210, 9%, 31%);
-    --background-color: hsl(148, 23%, 89%);
-    --border-color: hsl(148, 23%, 89%);
-    --brand-dark: hsl(170, 100%, 14%);
+
+    --brand-beige: hsl(39, 100%, 97%);
+    --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
+    --brand-dark: hsl(var(--hue), 100%, 14%);
 
     --bg-light: hsl(180, 14%, 97%);
 
@@ -129,6 +129,34 @@ section .content p{
     background-color: var(--brand-dark);
 }
 
+/* ----------------CUSTOM COLORS------------------- */
+
+
+#services .card circle{
+    fill: var(--brand-light);
+}
+
+#navigation .logo path[fill*='#00856F'],
+#backToTopButton circle{
+    fill: var(--primary-color);
+}
+
+button.openMenu path[stroke*='#00856F'],
+#contact li path{
+    stroke: var(--primary-color);
+    transition: 350ms;
+}
+
+#navigation.scroll button.openMenu path[stroke*='#00856F']{
+    stroke: white;
+}
+
+body.menuExpanded #navigation .logo path,
+#navigation.scroll .logo path{
+    fill: white;
+    transition: 350ms;
+}
+
 /* ----------------NAVIGATION------------------- */
 nav{
     display: flex;
@@ -155,16 +183,6 @@ nav.scroll{
     background: var(--primary-color);
 }
 
-nav.scroll .logo path{
-    fill: white;
-    transition: 350ms;
-}
-
-nav.scroll button path{
-    stroke: white;
-    transition: 350ms;
-}
-
 nav button{
     background: none;
     border: none;
@@ -175,7 +193,7 @@ nav button{
 #home::before{
     display: block;
     content: "";
-    background-color: var(--background-color);
+    background-color: var(--brand-light);
     width: 100%;
     height: calc(108rem + var(--nav-height));
 
@@ -213,13 +231,13 @@ nav button{
     justify-content: center;
     gap: 6rem;
 
-    background-color: var(--box-color);
+    background-color: var(--brand-beige);
     width: 32.7rem;
 
     margin-inline: auto;
     padding-block: 4rem;
     border-radius: 0.6rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--brand-light);
 }
 
 #home .containerNumberChild h3{
@@ -355,7 +373,7 @@ body.menuExpanded button path{
 
     background: white;
 
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--brand-light);
     border-radius: .6rem;
 }
 
@@ -364,12 +382,12 @@ body.menuExpanded button path{
     
     font-size: 2.4rem;
     line-height: 3.1rem;
-}  
+} 
 
 /* ----------------ABOUT------------------- */
 #about {
     text-align: left;
-    background-color: var(--box-color);
+    background-color: var(--brand-beige);
 }
 
 #about header h2{
