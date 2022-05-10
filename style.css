@@ -601,6 +601,7 @@ footer .socialLinks{
         transition: opacity 0.4s;
     }
 
+    nav#navigation .menu li a.active,
     nav#navigation .menu li a:hover{
         opacity: 1;
         font-weight: 700;
@@ -625,15 +626,18 @@ footer .socialLinks{
         background-color: white;
     }
 
+    nav#navigation .menu li a.active::after,
     nav#navigation .menu li a:hover::after{
         padding-inline: 0.8rem;
         width: 100%;
     }
 
+    nav#navigation.scroll .menu li a.active,
     nav#navigation.scroll .menu li a:hover{
         opacity: 1;
     }
 
+    nav#navigation.scroll .menu a.button.active,
     nav#navigation.scroll .menu a.button:hover{
         background-color: var(--primary-color);
         border: none;
