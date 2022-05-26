@@ -37,9 +37,10 @@ function ActivateMenuAtCurrentSection(section){
 }
 
 function showNavOnScroll(){
+    const darkModeBtn = document.getElementById('dtBtn');
     if(scrollY > 0){
         navigation.classList.add("scroll");
-    }else{
+    }else if (!darkModeBtn.checked){
         navigation.classList.remove("scroll");
     }
 }
@@ -54,11 +55,21 @@ function showBackToTopButtonOnScroll(){
 
 
 function openMenu(){
-    document.body.classList.add("menuExpanded")
+    document.body.classList.add("menuExpanded");
 }
 
 function closeMenu(){
-    document.body.classList.remove("menuExpanded")
+    document.body.classList.remove("menuExpanded");
+}
+
+function chooseTheme(){
+    const darkModeBtn = document.getElementById('dtBtn');
+    if (darkModeBtn.checked) {
+        document.body.classList.add('darkTheme');
+        navigation.classList.add("scroll");
+    } else{
+        document.body.classList.remove('darkTheme');
+    }
 }
 
 ScrollReveal({
