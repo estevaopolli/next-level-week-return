@@ -432,6 +432,21 @@ body.menuExpanded button path{
     margin-bottom: 3rem;
 }
 
+
+.switch > label::before{
+    transition: none;
+    content: url(assets/darkThemeIcon.png);
+    position: absolute;
+    top: 0;
+    width: 3.3rem;
+}
+
+.switch > input:checked + label::before{
+    position: absolute;
+    content: url(assets/lightThemeIcon.png);
+    right: 2.5rem;
+}
+
 .switch label {
     display: block;
     position: relative;
@@ -440,14 +455,6 @@ body.menuExpanded button path{
     border: 2px solid rgb(255, 255, 255);
     border-radius: 5rem;
     transition: all 0.15s ease-in-out;
-}
-
-.menu .switch > label::before{
-    transition: none;
-    content: url(assets/darkThemeIcon.png);
-    position: absolute;
-    top: 0;
-    width: 3.3rem;
 }
 
 .switch > label::after{
@@ -475,12 +482,8 @@ body.menuExpanded button path{
     border-color: white;
 }
 
-.switch > input:checked + label::before{
-    content: url(assets/lightThemeIcon.png);
-    right: 2.5rem;
-}
 
-.switch > input:checked +label::after{
+.switch > input:checked + label::after{
     content: '';
     margin: .1rem;
     width: 1.9rem;
